@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useState } from "react";
 
 function Header() {
@@ -7,27 +8,31 @@ function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold text-gray-800">
+        <Link to="/" className="text-2xl font-bold text-gray-800">
           My Portfolio
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#home" className="text-gray-600 hover:text-black">
+          <Link to="/#home" className="text-gray-600 hover:text-black">
             Home
-          </a>
+          </Link>
 
-          <a href="#about" className="text-gray-600 hover:text-black">
+          <Link to="/#about" className="text-gray-600 hover:text-black">
             About
-          </a>
+          </Link>
 
-          <a href="#projects" className="text-gray-600 hover:text-black">
+          <Link to="/#projects" className="text-gray-600 hover:text-black">
             Projects
-          </a>
+          </Link>
 
-          <a href="#contact" className="text-gray-600 hover:text-black">
+          <Link to="/products" className="text-gray-600 hover:text-black">
+            Products
+          </Link>
+
+          <Link to="/#contact" className="text-gray-600 hover:text-black">
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -44,37 +49,45 @@ function Header() {
       {isMenuOpen && (
         <div className="border-t px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
-            <a
-              href="#home"
+            <Link
+              to="/#home"
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 hover:text-black"
             >
               Home
-            </a>
+            </Link>
 
-            <a
-              href="#about"
+            <Link
+              to="/#about"
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 hover:text-black"
             >
               About
-            </a>
+            </Link>
 
-            <a
-              href="#projects"
+            <Link
+              to="/#projects"
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 hover:text-black"
             >
               Projects
-            </a>
+            </Link>
 
-            <a
-              href="#contact"
+            <Link
+              to="/products"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-600 hover:text-black"
+            >
+              Products
+            </Link>
+
+            <Link
+              to="/#contact"
               onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 hover:text-black"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}
